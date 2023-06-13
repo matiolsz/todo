@@ -55,4 +55,17 @@ export class TodoService {
     })
   }
 
+  getCategoryName(categoryId: string) {
+    return this.afs
+      .collection('categories')
+      .doc(categoryId)
+      .get()
+      .pipe(
+        map((snapshot) => {
+          const data = snapshot.data();
+          return { data };
+        })
+      );
+  }
+
 }

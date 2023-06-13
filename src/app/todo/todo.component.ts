@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class TodoComponent {
 
   categoryId!: string;
+  category!: any;
   todos!: Array<any>;
 
   todoName!: string;
@@ -21,6 +22,9 @@ export class TodoComponent {
 
   ngOnInit(): void {
     this.categoryId = this.activatedRoute.snapshot.paramMap.get('id')!;
+    this.todoService.getCategoryName(this.categoryId).subscribe(val => {
+      this.category = val;
+    })
     this.todoService.loadTodos(this.categoryId).subscribe(val => {
       this.todos = val;
     })
