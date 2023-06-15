@@ -68,4 +68,16 @@ export class TodoService {
       );
   }
 
+  getTenTodos(categoryId: string) {
+    return this.afs.collection('categories').doc(categoryId).collection('todos', ref => ref.limit(10)).snapshotChanges().pipe(
+      map((actions: any[]) => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, data }
+        })
+      })
+    )
+  }
+
 }

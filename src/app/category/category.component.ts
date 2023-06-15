@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CategoryService } from '../service/category.service';
 
@@ -25,7 +25,10 @@ export class CategoryComponent {
   categoryId: string = '';
 
   buttonStatus: string = 'Add';
+  
+  isWindowSmallerThan992px: boolean = false;
 
+  
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
@@ -67,4 +70,11 @@ export class CategoryComponent {
     this.categoryService.deleteCategory(id);
 
   }
+
+  
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    this.isWindowSmallerThan992px = window.innerWidth < 992;
+  }
+
 }

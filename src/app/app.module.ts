@@ -14,6 +14,7 @@ import { CategoryComponent } from './category/category.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { SmallTodoComponent } from './small-todo/small-todo.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ToastrModule } from 'ngx-toastr';
     NavbarComponent,
     FooterComponent,
     CategoryComponent,
-    TodoComponent
+    TodoComponent,
+    SmallTodoComponent
   ],
   imports: [
     BrowserModule,

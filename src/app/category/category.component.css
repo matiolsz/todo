@@ -5,14 +5,14 @@
     border-top-left-radius: 30px ;
 }
 
-.badge-primary {
-    background-color: #e9eeff;
-    color: #4772fe;
+.bg-primary {
+    color: #e9eeff;
+    margin-bottom: 0.5em;
 }
 
-.badge-danger {
-    background-color: #fef0f0;
-    color: #f04141;
+.bg-danger {
+    color: #fef0f0;
+    margin-top: 1em;
 }
 
 .cat-tools{
@@ -30,12 +30,6 @@
 
 .category-list .card:hover .cat-tools {
     display: inline;
-}
-
-.text-info{
-    font-size: larger;
-    color: black !important;
-    margin-bottom: 30px;
 }
 
 .border{

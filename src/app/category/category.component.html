@@ -1,35 +1,30 @@
-<div class="row justify-content-center md-3">
-    <div class="col-md-4 text-center">
-        <p class="text-info">
-            TODO CATEGORIES
-        </p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
+<div class="row" [ngStyle]="{'margin-top.em': isWindowSmallerThan992px ? 2 : 0}">
         <form #f="ngForm" (ngSubmit)=' f.form.valid && onSubmit(f)' class="form-inline">
-            <div class="float-start col-md-10 form-group">
-                <input type="text" placeholder="Add new categories here" name="categoryName"
-                    class="form-control-plaintext border drop-shadow border-danger" [(ngModel)]='categoryName' required #category = 'ngModel' 
-                    [ngClass]="{'border-danger': f.submitted && category.invalid}">
+            <div class="form-row align-items-center">
+                <div class="float-start col-md-10 form-group">
+                    <input type="text" placeholder="Add new categories here" name="categoryName"
+                        class="form-control-plaintext border drop-shadow border-danger" [(ngModel)]='categoryName'
+                        required #category='ngModel' [ngClass]="{'border-danger': f.submitted && category.invalid}">
+                </div>
+                <button type="submit"
+                    class="float-end btn btn-primary col-md-2 btn-todo btn-block drop-shadow">{{buttonStatus}}</button>
+                <div class="text-danger ml-3" *ngIf="f.submitted && category.invalid && category.errors?.['required']">
+                    Category is required.</div>
             </div>
-            <button type="submit" class="float-end btn btn-primary col-md-2 btn-todo btn-block drop-shadow">{{buttonStatus}}</button>            
-            <div class="text-danger ml-3" *ngIf="f.submitted && category.invalid && category.errors?.['required']">Category is required.</div>
         </form>
-    </div>
 </div>
 
 <div class="row category-list">
     <div class="col-md-3" *ngFor="let category of categories">
-        <div class="card drop-shadow" [style.border-left-color] = 'category.data.colorCode'>
+        <div class="card drop-shadow" [style.border-left-color]='category.data.colorCode'>
             <div class="card-body">
                 <div class="clearfix">
                     <div class="float-start">
                         <div class="badge bg-primary"> CATEGORY </div>
                     </div>
                     <div class="float-end cat-tools">
-                        <small><i class="fa fa-pencil-alt text-success" (click)='onEdit(category.data.category, category.id)'></i></small>
+                        <small><i class="fa fa-pencil-alt text-success"
+                                (click)='onEdit(category.data.category, category.id)'></i></small>
                         <small><i class="fas fa-trash text-danger" (click)='delete(category.id)'></i></small>
                     </div>
                 </div>
@@ -38,6 +33,11 @@
                     <h3 [style.color]="category.data.colorCode">{{ category.data.category }}</h3>
                     <small class="text-secondary"></small>
                 </div>
+
+                <app-small-todo [categoryId]="category.id"></app-small-todo>
+
+                <br>
+
                 <span class="badge bg-danger">{{category.data.todoCount}}- Todos</span>
             </div>
         </div>
