@@ -1,0 +1,18 @@
+header {
+    height: 100px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+
+}
+
+.brand{
+    padding: 10px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'MyFont';
+    letter-spacing: 3rem;
+    font-size: 60px;
+    color: black !important;
+    
+}

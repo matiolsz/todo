@@ -1,0 +1,43 @@
+.card {
+    border: none;
+    border-left: 5px solid #0000;
+    margin-top: 50px;
+    border-top-left-radius: 30px ;
+}
+
+.bg-primary {
+    color: #e9eeff;
+    margin-bottom: 0.5em;
+}
+
+.bg-danger {
+    color: #fef0f0;
+    margin-top: 1em;
+}
+
+.cat-tools{
+    display: none;
+}
+
+.cat-tools i {
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.category-list .card:hover {
+    cursor: pointer;
+}
+
+.category-list .card:hover .cat-tools {
+    display: inline;
+}
+
+.border{
+    border-top-left-radius: 10px ;
+    border-bottom-left-radius: 10px;
+}
+
+.btn-todo{
+    border-top-left-radius: 0px !important ;
+    border-bottom-left-radius: 0px !important;
+}
