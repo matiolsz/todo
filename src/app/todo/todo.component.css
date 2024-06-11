@@ -5,7 +5,7 @@
 .todo-lists .card {
     border: none;
     margin-top: 5px;
-    background-color: #f8f8f8;
+    background-color: #000000cf;
 }
 
 .todo-tools {
@@ -41,4 +41,19 @@ hr {
 
 h1 {
     margin-bottom: 1em;
+}
+
+.border{
+    border-top-left-radius: 10px ;
+    border-bottom-left-radius: 10px;
+}
+
+.dark-theme{
+    color: #a8ffa5 !important;
+    background-color: black !important;
+}
+
+.green-color{
+    color: #a8ffa5 !important;
+
 }

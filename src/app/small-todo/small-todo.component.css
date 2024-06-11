@@ -1,0 +1,6 @@
+.text-secondary {
+    --bs-text-opacity: 1;
+    color: rgb(8 147 0) !important;
+    width: -webkit-fill-available;
+
+}

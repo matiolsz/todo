@@ -3,11 +3,11 @@
             <div class="form-row align-items-center">
                 <div class="float-start col-md-10 form-group">
                     <input type="text" placeholder="Add new categories here" name="categoryName"
-                        class="form-control-plaintext border drop-shadow border-danger" [(ngModel)]='categoryName'
+                        class="form-control-plaintext border drop-shadow border-danger dark-theme" [(ngModel)]='categoryName'
                         required #category='ngModel' [ngClass]="{'border-danger': f.submitted && category.invalid}">
                 </div>
                 <button type="submit"
-                    class="float-end btn btn-primary col-md-2 btn-todo btn-block drop-shadow">{{buttonStatus}}</button>
+                    class="float-end btn btn-primary col-md-2 border btn-todo btn-block drop-shadow dark-theme ">{{buttonStatus}}</button>
                 <div class="text-danger ml-3" *ngIf="f.submitted && category.invalid && category.errors?.['required']">
                     Category is required.</div>
             </div>

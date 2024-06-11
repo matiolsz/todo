@@ -31,5 +31,5 @@ input[type = text]{
 
 @font-face {
     font-family: 'MyFont';
-    src: url('../assets/Montserrat-VariableFont_wght.ttf');
+    src: url('src\assets\Montserrat-VariableFont_wght.ttf');
   }

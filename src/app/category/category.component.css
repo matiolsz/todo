@@ -3,11 +3,14 @@
     border-left: 5px solid #0000;
     margin-top: 50px;
     border-top-left-radius: 30px ;
+    background-color: #000000cf;
 }
 
 .bg-primary {
     color: #e9eeff;
     margin-bottom: 0.5em;
+    background-color: #003f04 !important;
+
 }
 
 .bg-danger {
@@ -40,4 +43,9 @@
 .btn-todo{
     border-top-left-radius: 0px !important ;
     border-bottom-left-radius: 0px !important;
+}
+
+.dark-theme{
+    color: #a8ffa5 !important;
+    background-color: black !important;
 }
