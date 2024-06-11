@@ -26,7 +26,8 @@ export class TodoComponent {
       this.category = val;
     })
     this.todoService.loadTodos(this.categoryId).subscribe(val => {
-      this.todos = val;
+      this.todos = val.sort((a, b) => (a.data.isCompleted === b.data.isCompleted) ? 0 : a.data.isCompleted ? 1 : -1);
+      ;
     })
   }
 

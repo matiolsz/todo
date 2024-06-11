@@ -27,8 +27,8 @@
             <div class="card-body">
                 <div class="clearfix">
                     <div class="float-start text-secondary">
-                        <i class="far fa-circle text-danger" *ngIf="!todo.data.isCompleted"></i>
-                        <i class="fas fa-check text-success" *ngIf="todo.data.isCompleted"></i>
+                        <i class="far fa-circle text-danger" *ngIf="!todo.data.isCompleted" (click)="markComplete(todo.id)"></i>
+                        <i class="fas fa-check text-success" *ngIf="todo.data.isCompleted" (click)="markUncomplete(todo.id)"></i>
                         {{todo.data.todo}}
                         <hr *ngIf="todo.data.isCompleted">
                     </div>
